@@ -61,6 +61,7 @@ h2 {
 }
 
 label {
+  display: block;
   margin-bottom: 0.4rem;
   font-weight: bold;
 }
@@ -109,22 +110,6 @@ table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-@media (max-width: 900px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-}
-
-.delete-button {
-  background-color: #dc3545;
-  width: auto;
-  padding: 0.55rem 0.8rem;
-}
-
-.delete-button:hover {
-  background-color: #b02a37;
-}
-
 .actions-cell {
   display: flex;
   gap: 0.5rem;
@@ -139,6 +124,16 @@ table tr:nth-child(even) {
 
 .edit-button:hover {
   background-color: #0b5ed7;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  width: auto;
+  padding: 0.55rem 0.8rem;
+}
+
+.delete-button:hover {
+  background-color: #b02a37;
 }
 
 .button-group {
@@ -157,4 +152,68 @@ table tr:nth-child(even) {
 
 .cancel-button:hover {
   background-color: #5c636a;
+}
+
+.expired {
+  background-color: #ffdcdc !important;
+}
+
+.clear-button {
+  background-color: #ffc107;
+  color: #000;
+  margin: 1rem 0;
+  width: auto;
+  padding: 0.6rem 1rem;
+}
+
+.clear-button:hover {
+  background-color: #e0a800;
+}
+
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.search-group,
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+}
+
+.search-group label,
+.filter-group label {
+  min-height: 48px;
+}
+
+.search-group input {
+  max-width: 320px;
+}
+
+.filter-group select {
+  min-width: 220px;
+}
+
+.search-group input,
+.filter-group select {
+  height: 44px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-container {
+    flex-direction: column;
+  }
+
+  .search-group input,
+  .filter-group select {
+    max-width: 100%;
+    min-width: 100%;
+  }
 }

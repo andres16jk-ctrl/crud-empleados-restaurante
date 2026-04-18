@@ -58,11 +58,17 @@ function App() {
     setEmployeeToEdit(null);
   };
 
+  const handleClearEmployees = () => {
+  const confirmClear = window.confirm("¿Eliminar todos los empleados?");
+  if (!confirmClear) return;
+
+  setEmployees([]);
+  };
+
   return (
     <div>
       <h1>Gestión de empleados - Cadena de restaurantes</h1>
       <p>Proyecto CRUD desarrollado con React, TypeScript y Vite.</p>
-
       <div className="container">
         <EmployeeForm
           onAddEmployee={handleAddEmployee}
@@ -74,6 +80,8 @@ function App() {
           employees={employees}
           onDeleteEmployee={handleDeleteEmployee}
           onEditEmployee={handleEditEmployee}
+          onClearEmployees={handleClearEmployees}
+
         />
       </div>
     </div>
